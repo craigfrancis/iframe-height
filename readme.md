@@ -1,7 +1,7 @@
 
 # IFrame Height
 
-Due to the recent [removal of the `@seamless` attribute](https://github.com/whatwg/html/issues/331) on `<iframes>` from the WHATWG spec.
+Due to the recent removal of the `@seamless` attribute on `<iframes>` from the WHATWG spec ((issue #331)[https://github.com/whatwg/html/issues/331]).
 
 We still need to consider the problem of setting the height of iframes, so they contain their content (no scroll bars).
 
