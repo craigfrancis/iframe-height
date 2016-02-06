@@ -23,6 +23,8 @@ Further discussion on this proposal is on:
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
 
+Alternatively we could look at a new keyword for the [resize](https://developer.mozilla.org/en-US/docs/Web/CSS/resize) property, which would be useful for a `<textarea>` that automatically increases its height based on its content (another common problem, which currently requires JavaScript to solve).
+
 ---
 
 ## Current solutions
@@ -58,6 +60,6 @@ http://stackoverflow.com/search?q=resize+iframe
 
 ## Feature Requests
 
-- [Chrome](https://crbug.com/XXX)
+- [Chrome](https://crbug.com/584913)
 - [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=XXX)
 - [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/XXX)
