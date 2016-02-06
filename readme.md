@@ -44,7 +44,7 @@ Typically this is solved with a setTimeout(), which is not ideal.
 
 ### Cross Domain
 
-Due to the security restrictions in place, this requires the iframed content to use postMessage() every time the size changes.
+Due to the security restrictions in place, this requires the document in the `<iframe>` to use postMessage() every time the content changes.
 
 This is currently custom code on every website, as no-one can agree on what format the postMessage() should use.
 
