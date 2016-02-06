@@ -18,7 +18,7 @@ And 1 header, to be set on the framed content (framed.html):
 
 This header is for security reasons, otherwise it can leak state information (e.g. the height of the page may determine if a user is logged in).
 
-I believe this is the main feature that `@seamless` needed to provide, rather than the iframes content being "rendered in a manner that makes it appear to be part of the containing document" ([spec](https://www.w3.org/html/wg/drafts/html/master/single-page.html#attr-iframe-seamless)).
+I believe this is the main feature that `@seamless` needed to provide, rather than the `<iframe>` content being "rendered in a manner that makes it appear to be part of the containing document" ([spec](https://www.w3.org/html/wg/drafts/html/master/single-page.html#attr-iframe-seamless)).
 
 Further discussion on this proposal is on:
 
