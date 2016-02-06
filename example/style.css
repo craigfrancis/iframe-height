@@ -1,0 +1,11 @@
+
+@charset "UTF-8";
+
+iframe {
+	border: 0;
+	height: max-content; /* Proposed value, not 'auto' for compatibly reasons */
+}
+
+body.framed {
+	background: #EEE;
+}
