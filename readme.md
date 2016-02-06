@@ -1,9 +1,7 @@
 
 # iFrame Height
 
-After the recent removal of the `@seamless` attribute on the `<iframe>` from the WHATWG spec ([issue 331](https://github.com/whatwg/html/issues/331)).
-
-We still need to consider the problem of setting the height of iframes, so they contain their content (without scroll bars).
+After the recent removal of the `@seamless` attribute on the `<iframe>` from the WHATWG spec ([issue 331](https://github.com/whatwg/html/issues/331)); we still need to consider the problem of setting the height of iframes, so they contain their content (without scroll bars).
 
 This proposal is to use 1 line of CSS:
 
