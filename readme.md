@@ -61,5 +61,7 @@ http://stackoverflow.com/search?q=resize+iframe
 ## Feature Requests
 
 - [Chrome](https://crbug.com/584913)
-- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=XXX)
-- [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/XXX)
+- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1246423)
+- [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12237801-feature-request-auto-resize-iframes-based-on-cont)
+- [Opera](https://forums.opera.com/discussion/1870727/feature-request-auto-resize-iframes-based-on-content)
+- [Safari](https://bugs.webkit.org/show_bug.cgi?id=153952)
