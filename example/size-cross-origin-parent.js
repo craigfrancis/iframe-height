@@ -10,7 +10,7 @@
 	function receiveMessage(event) {
 
 		var origin = event.origin || event.originalEvent.origin;
-		if (origin !== 'http://browser.iframeheight.gemma.devcf.com') {
+		if (origin !== 'http://www.example.com') {
 			return;
 		}
 
