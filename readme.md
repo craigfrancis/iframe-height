@@ -5,14 +5,14 @@ After the recent removal of the `@seamless` attribute on `<iframes>` from the WH
 
 We still need to consider the problem of setting the height of iframes, so they contain their content (without scroll bars).
 
-The current proposal uses 1 line of CSS:
+This proposal is to use 1 line of CSS:
 
 	<iframe src="./framed.html" id="iframe"></iframe>
 	<style>
 		#iframe { height: max-content; }
 	</style>
 
-And 1 header, being set on the the framed content (framed.html):
+And 1 header, to be set on the framed content (framed.html):
 
 	Expose-Height-Cross-Origin: 1;
 
