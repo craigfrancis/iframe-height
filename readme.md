@@ -84,7 +84,7 @@ This is because the **width** is being enforced by the viewport on to the conten
 
 This is why I'm only proposing that the `iframe` supports re-sizing on the **height**, where the parent document sets the **width**.
 
-And it's not like the current JavaScript solutions/hacks don't have the same problem :-)
+And it's not like the current JavaScript solutions/hacks don't have the same problems.
 
 ---
 
