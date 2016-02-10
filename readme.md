@@ -70,7 +70,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ### Requests from other developers
 
-- [Queries on Stack Overflow](http://stackoverflow.com/search?q=resize+iframe)
-- [Mozilla bug report from 2001](https://bugzilla.mozilla.org/show_bug.cgi?id=80713)
-- [Feature request and discussion from 2005](http://blog.gerv.net/2005/02/autosizing_ifra/)
-- [Example JavaScript solution from 2010](https://css-tricks.com/snippets/jquery/fit-iframe-to-content/) (count the comments).
+- [Queries on Stack Overflow](http://stackoverflow.com/search?q=resize+iframe), a common problem.
+- [Mozilla bug report from 2001](https://bugzilla.mozilla.org/show_bug.cgi?id=80713), in relation to seamless.
+- [Feature request from 2005](http://blog.gerv.net/2005/02/autosizing_ifra/), with discussion of problems.
+- [Example JavaScript solution from 2010](https://css-tricks.com/snippets/jquery/fit-iframe-to-content/), check the comments.
