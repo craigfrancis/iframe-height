@@ -23,8 +23,6 @@ Further discussion on this proposal is on:
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
 
-Alternatively we could look at a new keyword for the [resize](https://developer.mozilla.org/en-US/docs/Web/CSS/resize) property, which would be useful for a `<textarea>` that automatically increases its height based on its content - another problem which requires JavaScript to solve.
-
 ---
 
 ## Current solutions
@@ -49,6 +47,26 @@ Due to the security restrictions in place, this requires the document in the `<i
 This is currently custom code on every website, as no-one can agree on what format the postMessage() should use.
 
 An example can be seen in these [child](/example/size-cross-origin-child.js) and [parent](/example/size-cross-origin-parent.js) JavaScript files.
+
+---
+
+## Additional uses
+
+This could be set on a `<textarea>`, to avoid scroll bars
+
+- http://alistapart.com/article/expanding-text-areas-made-elegant
+- http://www.impressivewebs.com/textarea-auto-resize/
+- http://stephanwagner.me/auto-resizing-textarea
+- http://github.com/thomasjo/jquery-autoresize
+- https://github.com/javierjulio/textarea-autosize
+- https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-autosize-textarea
+
+And as alternative to the abusing of "max-height: 100000px" to animate the opening/closing of simple disclosure widgets:
+
+- https://davidwalsh.name/css-slide
+- https://jsfiddle.net/ProLoser/nurx8/
+- http://weblog.west-wind.com/posts/2014/Feb/22/Using-CSS-Transitions-to-SlideUp-and-SlideDown
+- http://stackoverflow.com/questions/17301282/transitioning-between-open-close-in-details-element/17301828
 
 ---
 
