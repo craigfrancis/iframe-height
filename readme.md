@@ -23,7 +23,7 @@ Further discussion on this proposal is on:
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
 
-Along with the feature requests:
+And the browser feature requests:
 
 - [Chrome](https://crbug.com/584913)
 - [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1246423)
@@ -35,7 +35,7 @@ Along with the feature requests:
 
 ## Additional uses
 
-This could be set on a `<textarea>`, to avoid scroll bars:
+This could be set on a `<textarea>`, so its height automatically increases:
 
 	textarea {
 	    height: max-content;
