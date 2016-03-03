@@ -95,7 +95,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ## Potential problems
 
-- Infinite loops with media queries, raised by [Jake Archibald](https://lists.w3.org/Archives/Public/www-style/2016Feb/0065.html) ([more details](./problems/infinite-loops.md)).
+1. Infinite loops with media queries, raised by [Jake Archibald](https://lists.w3.org/Archives/Public/www-style/2016Feb/0065.html) ([more details](./problems/infinite-loops.md)).
 
 ---
 
