@@ -16,12 +16,20 @@ And 1 header, to be set on the framed content (framed.html):
 
 This header is for security reasons, otherwise it can leak state information (e.g. the height of the page may determine if a user is logged in).
 
-I believe this is the main feature that `@seamless` needed to provide, rather than the `<iframe>` content being "rendered in a manner that makes it appear to be part of the containing document" ([spec](https://www.w3.org/html/wg/drafts/html/master/single-page.html#attr-iframe-seamless)).
+This was the main feature that `@seamless` needed to provide, rather than the `<iframe>` content being "rendered in a manner that makes it appear to be part of the containing document" ([spec](https://www.w3.org/html/wg/drafts/html/master/single-page.html#attr-iframe-seamless)).
 
 Further discussion on this proposal is on:
 
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
+
+Along with the feature requests:
+
+- [Chrome](https://crbug.com/584913)
+- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1246423)
+- [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12237801-feature-request-auto-resize-iframes-based-on-cont)
+- [Opera](https://forums.opera.com/discussion/1870727/feature-request-auto-resize-iframes-based-on-content#Item_1)
+- [Safari](https://bugs.webkit.org/show_bug.cgi?id=153952)
 
 ---
 
@@ -91,19 +99,10 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ---
 
-## Links
-
-### Feature Requests
-
-- [Chrome](https://crbug.com/584913)
-- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1246423)
-- [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/12237801-feature-request-auto-resize-iframes-based-on-cont)
-- [Opera](https://forums.opera.com/discussion/1870727/feature-request-auto-resize-iframes-based-on-content#Item_1)
-- [Safari](https://bugs.webkit.org/show_bug.cgi?id=153952)
-
 ### Requests from other developers
 
 - [Queries on Stack Overflow](http://stackoverflow.com/search?q=resize+iframe) - a common problem.
 - [Mozilla bug report from 2001](https://bugzilla.mozilla.org/show_bug.cgi?id=80713) - in relation to seamless.
 - [Feature request from 2005](http://blog.gerv.net/2005/02/autosizing_ifra/) - with discussion of problems.
 - [Example JavaScript solution from 2010](https://css-tricks.com/snippets/jquery/fit-iframe-to-content/) - check the comments.
+
