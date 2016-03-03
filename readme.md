@@ -52,7 +52,11 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ## Additional uses
 
-This could be set on a `<textarea>`, to avoid scroll bars
+This could be set on a `<textarea>`, to avoid scroll bars:
+
+	textarea {
+	    height: max-content;
+	}
 
 - http://alistapart.com/article/expanding-text-areas-made-elegant
 - http://www.impressivewebs.com/textarea-auto-resize/
@@ -61,7 +65,18 @@ This could be set on a `<textarea>`, to avoid scroll bars
 - https://github.com/javierjulio/textarea-autosize
 - https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-autosize-textarea
 
-And as alternative to the abusing of "max-height: 100000px" to animate the opening/closing of simple disclosure widgets:
+And as alternative to "max-height: 100000px" when animating the opening/closing of simple disclosure widgets:
+
+	#widget {
+	    overflow-y: hidden;
+	    height: max-content;
+	    transition-property: all;
+	    transition-duration: .5s;
+	}
+
+	#widget.closed {
+	    height: 0;
+	}
 
 - https://davidwalsh.name/css-slide
 - https://jsfiddle.net/ProLoser/nurx8/
