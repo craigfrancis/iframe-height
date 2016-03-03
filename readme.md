@@ -25,31 +25,6 @@ Further discussion on this proposal is on:
 
 ---
 
-## Current solutions
-
-### Same Domain
-
-It is possible to set the height with JavaScript:
-
-	var iframe = document.getElementById('iframe'),
-		height = iframe.contentWindow.document.body.scrollHeight;
-
-	iframe.style.height = height + 'px';
-
-But this needs to be done whenever the content changes, such as navigating to a new page, or when new content is exposed (e.g. JS disclosure widget).
-
-Typically this is solved with a setTimeout(), which is not ideal.
-
-### Cross Domain
-
-Due to the security restrictions in place, this requires the document in the `<iframe>` to use postMessage() every time the content changes.
-
-This is currently custom code on every website, as no-one can agree on what format the postMessage() should use.
-
-An example can be seen in these [child](/example/size-cross-origin-child.js) and [parent](/example/size-cross-origin-parent.js) JavaScript files.
-
----
-
 ## Additional uses
 
 This could be set on a `<textarea>`, to avoid scroll bars:
@@ -82,6 +57,31 @@ And as alternative to "max-height: 100000px" when animating the opening/closing 
 - https://jsfiddle.net/ProLoser/nurx8/
 - http://weblog.west-wind.com/posts/2014/Feb/22/Using-CSS-Transitions-to-SlideUp-and-SlideDown
 - http://stackoverflow.com/questions/17301282/transitioning-between-open-close-in-details-element/17301828
+
+---
+
+## Current solutions
+
+### Same Domain
+
+It is possible to set the height with JavaScript:
+
+	var iframe = document.getElementById('iframe'),
+		height = iframe.contentWindow.document.body.scrollHeight;
+
+	iframe.style.height = height + 'px';
+
+But this needs to be done whenever the content changes, such as navigating to a new page, or when new content is exposed (e.g. JS disclosure widget).
+
+Typically this is solved with a setTimeout(), which is not ideal.
+
+### Cross Domain
+
+Due to the security restrictions in place, this requires the document in the `<iframe>` to use postMessage() every time the content changes.
+
+This is currently custom code on every website, as no-one can agree on what format the postMessage() should use.
+
+An example can be seen in these [child](/example/size-cross-origin-child.js) and [parent](/example/size-cross-origin-parent.js) JavaScript files.
 
 ---
 
