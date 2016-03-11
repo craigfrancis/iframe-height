@@ -5,22 +5,24 @@ As raised by [Jake Archibald](https://lists.w3.org/Archives/Public/www-style/201
 
 It is possible that the framed content includes a media query that is based on **height**, and this is a problem, as unlike a normal viewport, this **height** is now dependent on the content.
 
-But we can cheat here, as we don't need to consider every edge case that the element queries proposal needed to consider.
+But we *can* cheat here, as we don't need to consider every edge case that the "element queries" proposal needed to consider.
 
-So if the browser was to do an initial layout, and it determines a second pass is necessary, let it do that.
+We just need to let the browser do an initial layout, and if it determines a second pass is necessary, then **lock** the height, and use scroll bars as we do today.
 
-But if this causes the document to...
+---
 
-1. Alternate between two heights, "*then fix the `iframe` viewport at the larger size*". This will cause the `iframe` to be a bit too big, but it won't really cause any problems.
+In most cases this won't be a problem, as the `iframe` only needed to change the **height**, whereas most media queries are based on the **width**.
 
-2. Keep shrinking, "*then fix the `iframe` viewport at the larger size*", and again, allow it to be too big.
+This is because the **width** is being enforced by the viewport onto the content (as we hate horizontal scroll bars). Whereas the **height** is determined by the content, and is passed up from the content to the viewport (resulting in the vertical scroll bar).
 
-3. Keep growing, "*then fix the `iframe` viewport at the larger size*" (second pass), and now disable the auto-resize, so it basically falls back to the old behaviour of using a scroll bar (and if the browser is feeling charitable, it could add a note in the dev console, explaining why this happened).
+And it's not like the current JavaScript solutions/hacks don't suffer from this problem.
 
-That said, In every case I've looked at, this shouldn't be a problem, as the `iframe` only needed to change the **height**, whereas most media queries are based on the **width**.
+---
 
-This is because the **width** is being enforced by the viewport on to the content (as we hate horizontal scroll bars), where this restriction goes down the nodes... whereas the **height** is determined by the content, and is passed up the nodes to the viewport (resulting in the vertical scroll bar).
+For reference, this problem has already been addressed by:
 
-This is why I'm only proposing that the `iframe` supports re-sizing on the **height**, where the parent document sets the **width**.
+* [Safari](https://lists.w3.org/Archives/Public/www-style/2016Feb/0187.html): Where Simon Fraser explained that they already use this for "frame flattening" on iOS.
 
-And it's not like the current JavaScript solutions/hacks don't have the same problems.
+* [FireFox](https://lists.w3.org/Archives/Public/www-style/2016Feb/0067.html): Where Robert O'Callahan implemented this for the seamless attribute.
+
+The only opposition has been from [Ojan Vafai](https://lists.w3.org/Archives/Public/www-style/2016Feb/0180.html) (Chrome), who wants to half implement this feature via [ResizeObserver](https://lists.w3.org/Archives/Public/www-style/2016Feb/0252.html).
