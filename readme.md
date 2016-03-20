@@ -33,6 +33,46 @@ And the browser feature requests:
 
 ---
 
+## Current solutions
+
+### Same Domain
+
+It is possible to set the height with JavaScript:
+
+	var iframe = document.getElementById('iframe'),
+		height = iframe.contentWindow.document.body.scrollHeight;
+
+	iframe.style.height = height + 'px';
+
+But this needs to be done whenever the content changes, such as navigating to a new page, or when new content is exposed (e.g. JS disclosure widget).
+
+Typically this is solved with a setTimeout(), which is not ideal.
+
+### Cross Domain
+
+Due to the security restrictions in place, this requires the document in the `<iframe>` to use postMessage() every time the content changes.
+
+This is currently custom code on every website, as no-one can agree on what format the postMessage() should use.
+
+An example can be seen in these [child](/example/size-cross-origin-child.js) and [parent](/example/size-cross-origin-parent.js) JavaScript files.
+
+---
+
+## Potential problems
+
+1. Infinite loops with media queries, raised by [Jake Archibald](https://lists.w3.org/Archives/Public/www-style/2016Feb/0065.html) ([more details](./problems/infinite-loops.md)).
+
+---
+
+### Requests from other developers
+
+- [Queries on Stack Overflow](http://stackoverflow.com/search?q=resize+iframe) - a common problem.
+- [Mozilla bug report from 2001](https://bugzilla.mozilla.org/show_bug.cgi?id=80713) - in relation to seamless.
+- [Feature request from 2005](http://blog.gerv.net/2005/02/autosizing_ifra/) - with discussion of problems.
+- [Example JavaScript solution from 2010](https://css-tricks.com/snippets/jquery/fit-iframe-to-content/) - check the comments.
+
+---
+
 ## Additional uses
 
 ### Textarea
@@ -92,44 +132,3 @@ Feature requests:
 - [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1258216)
 - [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/13051218-feature-request-animating-max-height-height-bas)
 - [Safari](https://bugs.webkit.org/show_bug.cgi?id=155704)
-
----
-
-## Current solutions
-
-### Same Domain
-
-It is possible to set the height with JavaScript:
-
-	var iframe = document.getElementById('iframe'),
-		height = iframe.contentWindow.document.body.scrollHeight;
-
-	iframe.style.height = height + 'px';
-
-But this needs to be done whenever the content changes, such as navigating to a new page, or when new content is exposed (e.g. JS disclosure widget).
-
-Typically this is solved with a setTimeout(), which is not ideal.
-
-### Cross Domain
-
-Due to the security restrictions in place, this requires the document in the `<iframe>` to use postMessage() every time the content changes.
-
-This is currently custom code on every website, as no-one can agree on what format the postMessage() should use.
-
-An example can be seen in these [child](/example/size-cross-origin-child.js) and [parent](/example/size-cross-origin-parent.js) JavaScript files.
-
----
-
-## Potential problems
-
-1. Infinite loops with media queries, raised by [Jake Archibald](https://lists.w3.org/Archives/Public/www-style/2016Feb/0065.html) ([more details](./problems/infinite-loops.md)).
-
----
-
-### Requests from other developers
-
-- [Queries on Stack Overflow](http://stackoverflow.com/search?q=resize+iframe) - a common problem.
-- [Mozilla bug report from 2001](https://bugzilla.mozilla.org/show_bug.cgi?id=80713) - in relation to seamless.
-- [Feature request from 2005](http://blog.gerv.net/2005/02/autosizing_ifra/) - with discussion of problems.
-- [Example JavaScript solution from 2010](https://css-tricks.com/snippets/jquery/fit-iframe-to-content/) - check the comments.
-
