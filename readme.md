@@ -35,11 +35,15 @@ And the browser feature requests:
 
 ## Additional uses
 
+### Textarea
+
 This could be set on a `<textarea>`, so its height automatically increases:
 
 	textarea {
 	    height: max-content;
 	}
+
+Examples:
 
 - http://alistapart.com/article/expanding-text-areas-made-elegant
 - http://www.impressivewebs.com/textarea-auto-resize/
@@ -47,6 +51,15 @@ This could be set on a `<textarea>`, so its height automatically increases:
 - http://github.com/thomasjo/jquery-autoresize
 - https://github.com/javierjulio/textarea-autosize
 - https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-autosize-textarea
+
+Feature requests:
+
+- [Chrome](https://crbug.com/596326)
+- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1258214)
+- [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/13051191-feature-request-auto-resize-textarea)
+- [Safari](https://bugs.webkit.org/show_bug.cgi?id=155703)
+
+### Height animation
 
 And as alternative to "max-height: 100000px" when animating the opening/closing of simple disclosure widgets:
 
@@ -61,10 +74,24 @@ And as alternative to "max-height: 100000px" when animating the opening/closing 
 	    height: 0;
 	}
 
+    <p><a href="#widget">Show</a></p>
+    <div id="widget">
+        <p>Hidden text</p>
+    </div>
+
+Examples:
+
 - https://davidwalsh.name/css-slide
 - https://jsfiddle.net/ProLoser/nurx8/
 - http://weblog.west-wind.com/posts/2014/Feb/22/Using-CSS-Transitions-to-SlideUp-and-SlideDown
 - http://stackoverflow.com/questions/17301282/transitioning-between-open-close-in-details-element/17301828
+
+Feature requests:
+
+- [Chrome](https://crbug.com/596330)
+- [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1258216)
+- [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/13051218-feature-request-animating-max-height-height-bas)
+- [Safari](https://bugs.webkit.org/show_bug.cgi?id=155704)
 
 ---
 
