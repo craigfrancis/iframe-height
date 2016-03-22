@@ -77,7 +77,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ### Textarea
 
-This could be set on a `<textarea>`, so its height automatically increases ([demo](https://craigfrancis.github.io/iframe-height/additional/textarea/)/[example](./additional/textarea/)):
+This could be set on a `<textarea>`, so its height automatically increases ([demo](https://craigfrancis.github.io/iframe-height/additional/textarea/) / [source](./additional/textarea/)):
 
 	textarea {
 	    height: max-content;
@@ -101,7 +101,7 @@ Feature requests:
 
 ### Height animation
 
-An alternative to "max-height: 10000px" when animating the opening/closing of a disclosure widget ([demo](https://craigfrancis.github.io/iframe-height/additional/height-animation/)/[example](./additional/height-animation/)):
+An alternative to "max-height: 10000px" when animating the opening/closing of a disclosure widget ([demo](https://craigfrancis.github.io/iframe-height/additional/height-animation/) / [source](./additional/height-animation/)):
 
 	#widget {
 	    overflow-y: hidden;
