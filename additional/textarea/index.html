@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8" />
+	<title>Textarea</title>
+	<style>
+		h1, h2 {
+			font-size: 1.2em;
+			line-height: 1em;
+			margin: 0 0 0.2em 0;
+		}
+		h2 {
+			font-size: 1em;
+		}
+		div.example {
+			margin: 0 0 2em 0;
+		}
+		div.code {
+			margin: 1em 0 0 0;
+			font-family: monospace;
+			color: #AAA;
+		}
+		div.code strong {
+			color: #A00;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Textarea</h1>
+	<p>Proposal to allow the height of a textarea to change depending on the content, so all of its content is shown without scroll bars (<a href="https://github.com/craigfrancis/iframe-height">more details</a>).</p>
+
+	<h2>Simple textarea</h2>
+	<div class="example">
+
+		<textarea id="textarea_a" rows="4" cols="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+
+	</div>
+
+	<h2>Current solution (jQuery)</h2>
+	<div class="example">
+
+		<textarea id="textarea_b" rows="4" cols="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+
+		<script src="../a/jquery-1.12.2.min.js"></script>
+		<script src="./jquery.autoresize.js"></script>
+		<script>
+
+			$(function() {
+					$('#textarea_b').autoResize();
+				});
+
+		</script>
+
+	</div>
+
+	<h2>Proposed solution</h2>
+	<div class="example">
+
+		<textarea id="textarea_c" rows="4" cols="30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+
+		<style>
+			#textarea_c {
+				min-height: 5em; /* Backwards compatibility */
+				height: max-content;
+			}
+		</style>
+
+		<div class="code">
+			&lt;style&gt;<br />
+			&#xA0;&#xA0;textarea {<br />
+			&#xA0;&#xA0;&#xA0;&#xA0;min-height: 5em; /* Backwards compatibility */<br />
+			&#xA0;&#xA0;&#xA0;&#xA0;height: <strong>max-content</strong>;<br />
+			&#xA0;&#xA0;}<br />
+			&lt;/style&gt;
+		</div>
+
+	</div>
+
+</body>
+</html>

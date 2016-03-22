@@ -77,7 +77,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ### Textarea
 
-This could be set on a `<textarea>`, so its height automatically increases:
+This could be set on a `<textarea>`, so its height automatically increases ([example](./additional/textarea/)):
 
 	textarea {
 	    height: max-content;
@@ -101,7 +101,7 @@ Feature requests:
 
 ### Height animation
 
-And as alternative to "max-height: 100000px" when animating the opening/closing of simple disclosure widgets:
+And as alternative to "max-height: 100000px" when animating the opening/closing of simple disclosure widgets ([example](./additional/height-animation/)):
 
 	#widget {
 	    overflow-y: hidden;

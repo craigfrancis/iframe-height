@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8" />
+	<title>Height animation</title>
+	<style>
+		h1, h2 {
+			font-size: 1.2em;
+			line-height: 1em;
+			margin: 0 0 0.2em 0;
+		}
+		h2 {
+			font-size: 1em;
+		}
+		div.example {
+			margin: 0 0 2em 0;
+		}
+		div.code {
+			margin: 1em 0 0 0;
+			font-family: monospace;
+			color: #AAA;
+		}
+		div.code strong {
+			color: #A00;
+		}
+		.toggle {
+			margin: 0;
+			padding: 0.5em 0;
+		}
+		.widget > div {
+			border: 1px solid #AAA;
+			padding: 0.5em;
+			max-width: 30em;
+		}
+		.widget > div p {
+			margin: 0;
+		}
+	</style>
+	<script src="./toggle.js" async="async"></script>
+</head>
+<body>
+
+
+	<h1>Height animation</h1>
+	<p>Proposal to allow the height of a widget to change, with an animation (<a href="https://github.com/craigfrancis/iframe-height">more details</a>).</p>
+
+
+	<!-- ########## -->
+
+
+		<h2>Current solution (jQuery)</h2>
+		<div class="example">
+
+			<p class="toggle"><a href="#widget_a">Show content</a></p>
+			<div class="widget" id="widget_a">
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+
+			<script src="../a/jquery-1.12.2.min.js"></script>
+			<script>
+
+				$(function() {
+						$('#widget_a').hide();
+						$('a[href="#widget_a"]').click(function(e) {
+								$('#widget_a').slideToggle();
+								e.preventDefault();
+							});
+					});
+
+			</script>
+
+		</div>
+
+
+	<!-- ########## -->
+
+
+		<h2>Current solution (animation)</h2>
+		<div class="example">
+
+			<p class="toggle"><a href="#widget_b" data-toggle-hidden="Hide content">Show content</a></p>
+			<div class="widget" id="widget_b">
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+
+			<style>
+				#widget_b {
+					overflow-y: hidden;
+					max-height: 90px; /* Whoops, this is a bit too small */
+					transition-property: all;
+					transition-duration: .5s;
+				}
+				#widget_b[aria-hidden="true"] {
+					max-height: 0;
+				}
+			</style>
+
+		</div>
+
+	<!-- ########## -->
+
+		<h2>Proposed solution</h2>
+		<div class="example">
+
+			<p class="toggle"><a href="#widget_c" data-toggle-hidden="Hide content">Show content</a></p>
+			<div class="widget" id="widget_c">
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+
+			<style>
+				#widget_c {
+					overflow-y: hidden;
+					height: max-content;
+					transition-property: all;
+					transition-duration: .5s;
+				}
+				#widget_c[aria-hidden="true"] {
+					height: 0;
+				}
+			</style>
+
+			<div class="code">
+				&lt;style&gt;<br />
+				&#xA0;&#xA0;#widget_c {<br />
+				&#xA0;&#xA0;&#xA0;&#xA0;overflow-y: hidden;<br />
+				&#xA0;&#xA0;&#xA0;&#xA0;height: <strong>max-content</strong>;<br />
+				&#xA0;&#xA0;&#xA0;&#xA0;transition-property: all;<br />
+				&#xA0;&#xA0;&#xA0;&#xA0;transition-duration: .5s;<br />
+				&#xA0;&#xA0;}<br />
+				&#xA0;&#xA0;#widget_c[aria-hidden="true"] {<br />
+				&#xA0;&#xA0;&#xA0;&#xA0;height: 0;<br />
+				&#xA0;&#xA0;}<br />
+				&lt;/style&gt;
+			</div>
+
+		</div>
+
+</body>
+</html>
