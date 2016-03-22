@@ -48,7 +48,7 @@ But this needs to be done whenever the content changes, such as navigating to a 
 
 This can be solved with a setTimeout(), which is not ideal.
 
-In the future [ResizeObserver](https://github.com/WICG/ResizeObserver/blob/master/explainer.md) might help a little bit, but it still requires quite a bit of JavaScript, and does not work Cross-Domain.
+In the future [ResizeObserver](https://github.com/WICG/ResizeObserver/blob/master/explainer.md) might help, but it still requires quite a bit of JavaScript, and does not work Cross-Domain.
 
 ### Cross Domain
 
