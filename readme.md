@@ -37,7 +37,7 @@ And the browser feature requests:
 
 ### Same Domain
 
-It is possible to set the height with JavaScript:
+It is possible to set the height with JavaScript ([demo](https://craigfrancis.github.io/iframe-height/example/)):
 
 	var iframe = document.getElementById('iframe'),
 		height = iframe.contentWindow.document.body.scrollHeight;
