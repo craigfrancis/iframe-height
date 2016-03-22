@@ -62,10 +62,8 @@
 		}
 
 		if (document.readyState !== 'loading') {
-console.log('a');
 			window.setTimeout(init); // Handle asynchronously
 		} else {
-console.log('b');
 			document.addEventListener('DOMContentLoaded', init);
 		}
 
