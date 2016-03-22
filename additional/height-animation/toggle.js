@@ -61,11 +61,11 @@
 
 		}
 
-		if (document.readyState === 'complete') {
-console.log('ready');
+		if (document.readyState !== 'loading') {
+console.log('a');
 			window.setTimeout(init); // Handle asynchronously
 		} else {
-console.log('normal');
+console.log('b');
 			document.addEventListener('DOMContentLoaded', init);
 		}
 

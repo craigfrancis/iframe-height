@@ -45,7 +45,7 @@
 
 	}
 
-	if (document.readyState === 'complete') {
+	if (document.readyState !== 'loading') {
 		window.setTimeout(init); // Handle asynchronously
 	} else {
 		document.addEventListener('DOMContentLoaded', init);
