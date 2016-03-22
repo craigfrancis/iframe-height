@@ -45,6 +45,10 @@
 
 	}
 
-	document.addEventListener('DOMContentLoaded', init);
+	if (document.readyState === 'complete') {
+		window.setTimeout(init); // Handle asynchronously
+	} else {
+		document.addEventListener('DOMContentLoaded', init);
+	}
 
 })(document, window);
