@@ -21,7 +21,7 @@ Further discussion on this proposal is on:
 
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
-- [WICG](https://discourse.wicg.io/t/feature-request-auto-resize-textarea/1404)
+- [WICG](https://discourse.wicg.io/t/feature-request-allow-auto-resize-on-iframe/1405)
 
 And the browser feature requests:
 
