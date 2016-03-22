@@ -21,6 +21,7 @@ Further discussion on this proposal is on:
 
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
+- [WICG](https://discourse.wicg.io/t/feature-request-auto-resize-textarea/1404)
 
 And the browser feature requests:
 
@@ -45,7 +46,9 @@ It is possible to set the height with JavaScript:
 
 But this needs to be done whenever the content changes, such as navigating to a new page, or when new content is exposed (e.g. JS disclosure widget).
 
-Typically this is solved with a setTimeout(), which is not ideal.
+This can be solved with a setTimeout(), which is not ideal.
+
+In the future [ResizeObserver](https://github.com/WICG/ResizeObserver/blob/master/explainer.md) might help a little bit, but it still requires quite a bit of JavaScript, and does not work Cross-Domain.
 
 ### Cross Domain
 
@@ -60,6 +63,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 ## Potential problems
 
 1. Infinite loops with media queries, raised by [Jake Archibald](https://lists.w3.org/Archives/Public/www-style/2016Feb/0065.html) ([more details](./problems/infinite-loops.md)).
+2. ???
 
 ---
 
@@ -69,6 +73,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 - [Mozilla bug report from 2001](https://bugzilla.mozilla.org/show_bug.cgi?id=80713) - in relation to seamless.
 - [Feature request from 2005](http://blog.gerv.net/2005/02/autosizing_ifra/) - with discussion of problems.
 - [Example JavaScript solution from 2010](https://css-tricks.com/snippets/jquery/fit-iframe-to-content/) - check the comments.
+- Quite a few more.
 
 ---
 
@@ -76,7 +81,7 @@ An example can be seen in these [child](/example/size-cross-origin-child.js) and
 
 ### Textarea
 
-This could be set on a `<textarea>`, so its height automatically increases ([example](./additional/textarea/)):
+This could be set on a `<textarea>`, so its height automatically increases ([demo](https://craigfrancis.github.io/iframe-height/additional/textarea/) / [source](./additional/textarea/)):
 
 	textarea {
 	    height: max-content;
@@ -93,6 +98,7 @@ Examples:
 
 Feature requests:
 
+- [WICG](https://discourse.wicg.io/t/feature-request-auto-resize-textarea/1404)
 - [Chrome](https://crbug.com/596326)
 - [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1258214)
 - [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/13051191-feature-request-auto-resize-textarea)
@@ -100,7 +106,7 @@ Feature requests:
 
 ### Height animation
 
-And as alternative to "max-height: 100000px" when animating the opening/closing of simple disclosure widgets ([example](./additional/height-animation/)):
+An alternative to "max-height: 10000px" when animating the opening/closing of a disclosure widget ([demo](https://craigfrancis.github.io/iframe-height/additional/height-animation/) / [source](./additional/height-animation/)):
 
 	#widget {
 	    overflow-y: hidden;
@@ -127,7 +133,8 @@ Examples:
 
 Feature requests:
 
-- [Chrome](https://crbug.com/596330)
+- [WICG](https://discourse.wicg.io/t/feature-request-animating-max-height-height-based-on-content/1403)
+- [Chrome](https://crbug.com/596330) (WontFix)
 - [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1258216)
 - [Edge](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/13051218-feature-request-animating-max-height-height-bas)
 - [Safari](https://bugs.webkit.org/show_bug.cgi?id=155704)
