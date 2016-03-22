@@ -1,70 +1,70 @@
 
-;(function(document, window, undefined) {
+	;(function(document, window, undefined) {
 
-	'use strict';
+		'use strict';
 
-	if (!document.addEventListener || !('classList' in document.createElement('span'))) { // classList = IE11
-		return;
-	}
+		if (!document.addEventListener || !('classList' in document.createElement('span'))) { // classList = IE11
+			return;
+		}
 
-	function widget_toggle(e) {
+		function widget_toggle(e) {
 
-		var widget_ref = document.getElementById(this.getAttribute('aria-controls'));
+			var widget_ref = document.getElementById(this.getAttribute('aria-controls'));
 
-		if (widget_ref.getAttribute('aria-hidden') == 'true') {
+			if (widget_ref.getAttribute('aria-hidden') == 'true') {
 
-			this.setAttribute('aria-expanded', 'true');
-			this.textContent = this.getAttribute('data-toggle-hidden');
+				this.setAttribute('aria-expanded', 'true');
+				this.textContent = this.getAttribute('data-toggle-hidden');
 
-			widget_ref.setAttribute('aria-hidden', 'false');
-			widget_ref.focus();
+				widget_ref.setAttribute('aria-hidden', 'false');
+				widget_ref.focus();
 
-		} else {
+			} else {
 
-			this.setAttribute('aria-expanded', 'false');
-			this.textContent = this.getAttribute('data-toggle-shown');
+				this.setAttribute('aria-expanded', 'false');
+				this.textContent = this.getAttribute('data-toggle-shown');
 
-			widget_ref.setAttribute('aria-hidden', 'true');
+				widget_ref.setAttribute('aria-hidden', 'true');
+
+			}
+
+			e.preventDefault();
 
 		}
 
-		e.preventDefault();
+		function init() {
 
-	}
+			var links = document.querySelectorAll('a[data-toggle-hidden]'),
+				widget_ref_id,
+				widget_ref;
 
-	function init() {
+			for (var k = (links.length - 1); k >= 0; k--) {
 
-		var links = document.querySelectorAll('a[data-toggle-hidden]'),
-			widget_ref_id,
-			widget_ref;
+				widget_ref_id = links[k].getAttribute('href').substr(1);
+				widget_ref = document.getElementById(widget_ref_id);
 
-		for (var k = (links.length - 1); k >= 0; k--) {
+				if (widget_ref) {
 
-			widget_ref_id = links[k].getAttribute('href').substr(1);
-			widget_ref = document.getElementById(widget_ref_id);
+					widget_ref.setAttribute('aria-hidden', 'true');
+					widget_ref.setAttribute('tabindex', '-1');
+					widget_ref.style.outline = 'none';
 
-			if (widget_ref) {
+					links[k].setAttribute('data-toggle-shown', links[k].textContent);
+					links[k].setAttribute('role', 'button');
+					links[k].setAttribute('aria-expanded', 'false');
+					links[k].setAttribute('aria-controls', widget_ref_id);
+					links[k].addEventListener('click', widget_toggle);
 
-				widget_ref.setAttribute('aria-hidden', 'true');
-				widget_ref.setAttribute('tabindex', '-1');
-				widget_ref.style.outline = 'none';
-
-				links[k].setAttribute('data-toggle-shown', links[k].textContent);
-				links[k].setAttribute('role', 'button');
-				links[k].setAttribute('aria-expanded', 'false');
-				links[k].setAttribute('aria-controls', widget_ref_id);
-				links[k].addEventListener('click', widget_toggle);
+				}
 
 			}
 
 		}
 
-	}
+		if (document.readyState !== 'loading') {
+			window.setTimeout(init); // Handle asynchronously
+		} else {
+			document.addEventListener('DOMContentLoaded', init);
+		}
 
-	if (document.readyState !== 'loading') {
-		window.setTimeout(init); // Handle asynchronously
-	} else {
-		document.addEventListener('DOMContentLoaded', init);
-	}
-
-})(document, window);
+	})(document, window);
