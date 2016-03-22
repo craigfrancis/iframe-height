@@ -62,8 +62,10 @@
 		}
 
 		if (document.readyState === 'complete') {
+console.log('ready');
 			window.setTimeout(init); // Handle asynchronously
 		} else {
+console.log('normal');
 			document.addEventListener('DOMContentLoaded', init);
 		}
 
