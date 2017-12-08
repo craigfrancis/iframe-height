@@ -19,6 +19,7 @@ This was the main feature that `@seamless` needed to provide, rather than the `<
 
 Further discussion on this proposal is on:
 
+- **[W3C CSS Working Group](https://github.com/w3c/csswg-drafts/issues/1771)**
 - [WHATWG Issue Log](https://github.com/whatwg/html/issues/555)
 - [W3C WWW-Style](https://lists.w3.org/Archives/Public/www-style/2016Jan/0236.html)
 - [WICG](https://discourse.wicg.io/t/feature-request-allow-auto-resize-on-iframe/1405)
