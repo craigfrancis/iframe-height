@@ -36,7 +36,7 @@ And the browser feature requests:
 
 ## Current solutions
 
-### Same Domain
+###<ol type="1"><li> Same Domain</li>
 
 It is possible to set the height with JavaScript ([demo](https://craigfrancis.github.io/iframe-height/example/)):
 
@@ -51,7 +51,7 @@ This can be solved with a setTimeout(), which is not ideal.
 
 In the future [ResizeObserver](https://github.com/WICG/ResizeObserver/blob/master/explainer.md) might help, but it still requires quite a bit of JavaScript, and does not work Cross-Domain.
 
-### Cross Domain
+###<li> Cross Domain</li></ol>
 
 Due to the security restrictions in place, this requires the document in the `<iframe>` to use postMessage() every time the content changes.
 
