@@ -8,7 +8,7 @@ But we *can* cheat here, as we don't need to consider every edge case that the "
 
 We just need to let the browser do an initial layout, then it can **lock** the height, and use scroll bars as we do today.
 
-We *could* also add a JavaScript method the iframe content could call, asking for it's height to be updated, if the content changes.
+We **could** add a JavaScript method for the iframe to call, asking for it's height to be updated, if the content changes.
 
 Widget authors already work within these constraints - where they typically use `postMessage` and custom JavaScript in the parent to update the iframe height.
 
