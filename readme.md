@@ -19,7 +19,7 @@ This was the main feature that `@seamless` needed to provide, rather than the `<
 
 Suggested use cases:
 
-- Adverts, where the parent page can provide the content via URL or postMessage.
+- Adverts, where the parent page can provide the context via URL or postMessage.
 - Comments on a blog, which you want to sandbox.
 - Contact us form, on an otherwise static website.
 - Subscribe to our mailing list.
