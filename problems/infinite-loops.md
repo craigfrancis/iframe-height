@@ -6,15 +6,19 @@ It is possible that the framed content includes a media query that is based on *
 
 But we *can* cheat here, as we don't need to consider every edge case that the "element queries" proposal needed to consider.
 
-We just need to let the browser do an initial layout, and if it determines a second pass is necessary, then **lock** the height, and use scroll bars as we do today.
+We just need to let the browser do an initial layout, then it can **lock** the height, and use scroll bars as we do today.
+
+Maybe we could also add a JavaScript method that the iframe content could call, asking for it's height to be updated (e.g. as more content loads/changes).
+
+Widget authors should be able to work within these constraints - like they do already, where they typically use `postMessage` and custom JavaScript in the parent to update the iframe height.
 
 ---
 
 In most cases this won't be a problem, as the `iframe` only needed to change the **height**, whereas most media queries are based on the **width**.
 
-This is because the **width** is being enforced by the viewport onto the content (as we hate horizontal scroll bars). Whereas the **height** is determined by the content, and is passed up from the content to the viewport (resulting in the vertical scroll bar).
+This is because the **width** is being enforced by the viewport, onto the content, in the same that the main web page tries to limit the width, because we don't like horizontal scroll bars.
 
-And it's not like the current JavaScript solutions/hacks don't suffer from this problem.
+Whereas the **height** is determined by the content, and can be passed up from the content to the viewport (resulting in the vertical scroll bar).
 
 ---
 

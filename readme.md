@@ -17,6 +17,19 @@ This header is for security reasons, otherwise it can leak state information (e.
 
 This was the main feature that `@seamless` needed to provide, rather than the `<iframe>` content being "rendered in a manner that makes it appear to be part of the containing document" ([spec](https://www.w3.org/html/wg/drafts/html/master/single-page.html#attr-iframe-seamless)).
 
+Suggested use cases:
+
+- Adverts, where the parent page can provide the content via URL or postMessage.
+- Comments on a blog, which you want to sandbox.
+- Contact us form, on an otherwise static website.
+- Subscribe to our mailing list.
+- Payment forms (unfortunately, I hate it when the processor is hidden).
+- Recent Tweets from our company account.
+- Create a Tweet about this page.
+- Current weather at our location.
+- RSS reader showing content from a feed.
+- Syndicated article being shown on a news website.
+
 Further discussion on this proposal is on:
 
 - **[W3C CSS Working Group](https://github.com/w3c/csswg-drafts/issues/1771)**
