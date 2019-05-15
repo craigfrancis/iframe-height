@@ -16,7 +16,7 @@ Widget authors already work within these constraints - where they typically use 
 
 In most cases this won't be a problem, as the `iframe` only needed to change the **height**, whereas most media queries are based on the **width**.
 
-This is because the **width** is being enforced by the viewport, onto the content, in the same that the main web page tries to limit the width, because we don't like horizontal scroll bars.
+This is because the **width** is being enforced by the viewport, onto the content, in the same way the main web page tries to limit its width, because we don't like horizontal scroll bars.
 
 Whereas the **height** is determined by the content, and can be passed up from the content to the viewport (resulting in the vertical scroll bar).
 
